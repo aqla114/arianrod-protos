@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+option go_package = "protos/arianrod";
+
+// The greeting service definition.
+service Arianrod {
+    rpc GetGuild (GetGuildCharactersRequest) returns (GetGuildCharactersResponse) {}
+}
+
+// The request message containing the user's name.
+message GetGuildCharactersRequest {
+    string guild_id = 1;
+}
+
+// The response message containing the greetings
+message GetGuildCharactersResponse {
+    repeated Character characters = 1;
+}
+
+message Character {
+    string id = 1;
+    string name = 2;
+    string attribute = 3;
+    int32 action_priority = 4;
+    int32 mobility = 5;
+    int32 hp = 6;
+    int32 physical_defence = 7;
+    int32 magical_defence = 8;
+    int32 strength = 9;
+    int32 strength_base = 10;
+    int32 dexterity = 11;
+    int32 dexterity_base = 12;
+    int32 agility = 13;
+    int32 agility_base = 14;
+    int32 wisdom = 15;
+    int32 wisdom_base = 16;
+    int32 sensitivity = 17;
+    int32 sensitivity_base = 18;
+    int32 power = 19;
+    int32 power_base = 20;
+    int32 luck = 21;
+    int32 luck_base = 22;
+    repeated Skill skills = 23;
+}
+
+message Skill {
+    string name = 1;
+    string timing = 2;
+    string determination_way = 3;
+    string target = 4;
+    string range = 5;
+    string restriction = 6;
+    string detail = 7;
+}
